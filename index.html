@@ -29,6 +29,7 @@
     cursor: none;
   }
 
+  /* Custom cursor */
   .cursor {
     width: 12px; height: 12px;
     border: 2px solid var(--accent);
@@ -50,6 +51,7 @@
   }
   body:hover .cursor { opacity: 1; }
 
+  /* NOISE OVERLAY */
   body::before {
     content: '';
     position: fixed;
@@ -60,6 +62,7 @@
     opacity: 0.35;
   }
 
+  /* HERO */
   .hero {
     min-height: 100vh;
     display: grid;
@@ -182,6 +185,7 @@
     transform: translateY(-50%);
   }
 
+  /* Vertical text */
   .vert-text {
     position: absolute;
     right: 20px;
@@ -195,6 +199,7 @@
     z-index: 10;
   }
 
+  /* NAV */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -231,6 +236,7 @@
 
   .nav-links a:hover { color: var(--paper); }
 
+  /* SECTIONS */
   section {
     padding: 120px 50px;
     max-width: 1200px;
@@ -265,6 +271,7 @@
     background: var(--border);
   }
 
+  /* PROJECTS */
   .projects-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -337,6 +344,7 @@
     color: var(--gold);
   }
 
+  /* SKILLS */
   .skills-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -377,6 +385,7 @@
     font-size: 10px;
   }
 
+  /* EDUCATION */
   .edu-timeline {
     position: relative;
     padding-left: 40px;
@@ -442,6 +451,7 @@
     letter-spacing: 0.1em;
   }
 
+  /* ACHIEVEMENTS */
   .achievements-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -481,6 +491,7 @@
     font-size: 15px;
   }
 
+  /* PERSONAL */
   .personal-section {
     background: var(--card);
     border: 1px solid var(--border);
@@ -543,6 +554,7 @@
     line-height: 1.6;
   }
 
+  /* CONTACT */
   .contact-section {
     padding: 120px 50px;
     max-width: 1200px;
@@ -585,6 +597,7 @@
     color: var(--paper);
   }
 
+  /* FOOTER */
   footer {
     border-top: 1px solid var(--border);
     padding: 40px 50px;
@@ -606,11 +619,13 @@
     color: var(--muted);
   }
 
+  /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
+  /* BIG BG TEXT */
   .bg-text {
     position: absolute;
     font-family: 'Bebas Neue', sans-serif;
@@ -626,6 +641,7 @@
     letter-spacing: 0.05em;
   }
 
+  /* Scroll reveal */
   .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -637,6 +653,7 @@
     transform: translateY(0);
   }
 
+  /* DECORATIVE */
   .deco-cross {
     color: var(--border);
     font-size: 14px;
@@ -743,7 +760,7 @@
   </div>
 
   <div class="projects-grid">
-    <div class="project-card reveal">
+    <a href="https://github.com/rudra1601/DE_Project" target="_blank" class="project-card reveal" style="text-decoration: none;">
       <div class="project-num">P — 001</div>
       <h3 class="project-name">ScanTextify<br>Image to Text</h3>
       <p class="project-desc">A web application that extracts text from images using OCR techniques, enabling clipboard copy for immediate use elsewhere. Clean, utility-first design.</p>
@@ -752,9 +769,9 @@
         <span class="tool-tag">OCR</span>
         <span class="tool-tag">Web APIs</span>
       </div>
-    </div>
+    </a>
 
-    <div class="project-card reveal" style="transition-delay: 0.1s">
+    <a href="https://github.com/bhargavS17/IPC_and_Multithreading" target="_blank" class="project-card reveal" style="transition-delay: 0.1s; text-decoration: none;">
       <div class="project-num">P — 002</div>
       <h3 class="project-name">Linux Kernel<br>Queue Implementation</h3>
       <p class="project-desc">Successfully implemented a queue data structure within kernel space, navigating the complexities of the Linux kernel's memory model and synchronization primitives.</p>
@@ -763,7 +780,7 @@
         <span class="tool-tag">Linux Kernel</span>
         <span class="tool-tag">Systems</span>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 
@@ -970,6 +987,7 @@
 </footer>
 
 <script>
+  // Custom cursor
   const cursor = document.getElementById('cursor');
   const dot = document.getElementById('cursorDot');
   let mx = 0, my = 0, cx = 0, cy = 0;
@@ -1000,6 +1018,7 @@
     });
   });
 
+  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal, .edu-item');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
